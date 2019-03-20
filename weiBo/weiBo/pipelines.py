@@ -8,7 +8,7 @@
 
 class WeiboPipeline(object):
     def open_spider(self, spider):
-        self.coon = pymongo.MongoClient(host='106.15.204.56')
+        self.coon = pymongo.MongoClient(host='127.0.0.1')
 
     def process_item(self, item, spider):
         self.coon.xinlang.weibo.insert_one(item)
