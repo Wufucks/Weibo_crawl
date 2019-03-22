@@ -38,7 +38,6 @@ class WeibocSpider(scrapy.Spider):
                              cookies=Cookies, headers=header, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
-
         if response.url.endswith('page=1'):
             page_nums = re.search(r'/(\d+)页', response.text)
             if page_nums:
@@ -98,8 +97,13 @@ class WeibocSpider(scrapy.Spider):
 
     def parse_content(self, response):
         item = response.meta['item']
-        content_node = response.xpath('.//div[@id="M_"]//span[@class="ctt"]')[0]
-        all_content = content_node.xpath('string(.)').replace('\u200b', '').extract().strip()
+        all_content = response.xpath('//div[@id="M_"]//span[@class="ctt"]//text()').extract()
+
+
+        # all_content = content_node.xpath('string(.)').extract_first()
+        print('*'*23)
         print(all_content)
-        item['all_content'] = all_content[0:]
+        print('*'*23)
+
+        item['all_content'] = all_content if all_content else ''
         yield item
