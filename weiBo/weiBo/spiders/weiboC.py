@@ -5,24 +5,10 @@ from .utils import time_fix
 import datetime
 
 Cookies = {
-    'ALF': '1555566750',
-    '_T_WM': 'ad17813365183ec5c2b6fba4544683d5 ',
-    'SUB': '_2A25xlJSwDeRhGeVG6FQX9i_JzDyIHXVTdjz4rDV6PUJbkdANLXfMkW1NT7o88IDKUDFLJv5Yrc71bixMgVncTMWr ',
-    'SUHB': '0FQbL3glNgOxZO; SCF=Am8CPZ6hEZKb2d9k2Y3I0vu8LdeeJEAz0MZt2WDISOyvpg3lItPF84hAr3csjXB84eSiVQQ-9l0nIiEKYFcaR4s. ',
-    'SSOLoginState': '1552999648',
-    'MLOGIN': '1',
-    'WEIBOCN_FROM': '1110106030',
-    'XSRF-TOKEN': '4adcea',
-    'M_WEIBOCN_PARAMS': 'luicode%3D10000011%26lfid%3D1076035781311106%26fid%3D1076035781311106%26uicode%3D10000011'}
+#     自己注册个
+    }
 header = {
-    'Host': 'weibo.cn',
-    'Connection': 'keep-alive',
-    'Upgrade-Insecure-Requests': '1',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.6 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Accept-Language': 'zh,zh-CN;q=0.9,en;q=0.8',
-}
+    
 
 
 class WeibocSpider(scrapy.Spider):
